@@ -13,5 +13,14 @@ nav {
 
 nav span {
   font-family: 'Bungee';
-  vertical-align: top;
+}
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-angles-down {
+  color: red;
 }
