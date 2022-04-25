@@ -28,14 +28,3 @@
 .fa-angles-down {
   color: red;
 }
-
-.profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-  width: 100%;
-  padding-top: 240px;
-  ;
-}
