@@ -65,13 +65,47 @@ article.tweet header {
   justify-content: space-between;
 }
 
+article.tweet header div {
+  display: flex;
+  align-items: center;
+}
+
+article.tweet header img {
+  width: 2em;
+}
+
 article.tweet footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-top: solid;
+  padding-top: 0.2em;
+}
+
+article.tweet footer i {
+  color: #4056A1;
 }
 
 article.tweet .username {
   opacity: 0.5;
+}
+
+article.tweet p {
+  margin: 1.5em 0.5em 1em;
+}
+
+article.tweet footer div {
+  margin: 0 0.5em;
+}
+
+#flag:hover {
+  color: #C88837;
+}
+
+#retweet:hover {
+  color: #C88837;
+}
+
+#heart:hover {
+  color: #C88837;
 }
