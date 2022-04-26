@@ -71,3 +71,7 @@ article.tweet footer {
   justify-content: space-between;
   border-top: solid;
 }
+
+article.tweet .username {
+  opacity: 0.5;
+}
