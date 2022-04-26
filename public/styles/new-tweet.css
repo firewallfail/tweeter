@@ -59,6 +59,10 @@ article.tweet {
   border: solid;
 }
 
+article.tweet:hover {
+  box-shadow: 0.2em 0.2em rgba(0, 0, 0, 0.1);
+}
+
 article.tweet header {
   display: flex;
   flex-direction: row;
@@ -99,13 +103,13 @@ article.tweet footer div {
 }
 
 #flag:hover {
-  color: #C88837;
+  color: #E26F1D;
 }
 
 #retweet:hover {
-  color: #C88837;
+  color: #E26F1D;
 }
 
 #heart:hover {
-  color: #C88837;
+  color: #E26F1D;
 }
