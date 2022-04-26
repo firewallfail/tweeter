@@ -1,5 +1,8 @@
 $(document).ready(function() {
-  $('#tweet-text').on('input', () => {
-    console.log('this is working?');
+
+  const maxTweetLength = 140;
+  $('#tweet-text').on('input', function() {
+    let lengthOfTweet = $(this).val().length;
+    console.log(maxTweetLength - lengthOfTweet);
   })
 });
