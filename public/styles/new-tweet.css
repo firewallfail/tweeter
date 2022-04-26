@@ -52,3 +52,22 @@ label {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
 }
+
+article.tweet {
+  margin: 0.75em;
+  padding: 0.5em;
+  border: solid;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid;
+}
