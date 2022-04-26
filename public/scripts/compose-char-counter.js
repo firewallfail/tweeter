@@ -1,3 +1,5 @@
 $(document).ready(function() {
-  console.log('working');
+  $('#tweet-text').on('input', () => {
+    console.log('this is working?');
+  })
 });
