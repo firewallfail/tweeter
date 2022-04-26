@@ -37,3 +37,14 @@
   background-color: transparent;
   font-weight: 600;
 }
+
+.tweet-h2 {
+  margin: 0 0 0.25em 0;
+  font-family: 'Bungee';
+  font-size: 2rem;
+}
+
+label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
