@@ -21,6 +21,10 @@
   font-family: 'Bungee';
 }
 
+.counter-red {
+  color: red;
+}
+
 .tweet-footer {
   display: flex;
   padding-top: 0.5em;
