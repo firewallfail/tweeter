@@ -49,9 +49,9 @@ $(document).ready(function() {
     <footer>
       <div>${tweet.created_at}</div>
       <div>
-        <i id="flag" class="fa-solid fa-flag"></i>
-        <i id="retweet" class="fa-solid fa-share"></i>
-        <i id="heart" class="fa-solid fa-heart"></i>
+        <i id="flag" class="fa-solid fa-flag fa-xs"></i>
+        <i id="retweet" class="fa-solid fa-share fa-xs"></i>
+        <i id="heart" class="fa-solid fa-heart fa-xs"></i>
       </div>
     </footer>
   </article>
@@ -67,5 +67,17 @@ $(document).ready(function() {
   };
 
   renderTweets(data);
+
+  const tweetRefresh = function(event) {
+    event.preventDefault();
+    const formData = $(this).serialize();
+    $.ajax({
+      method: 'POST',
+      data: formData,
+      url: '/tweets',
+    })
+  };
+
+  $('form').submit(tweetRefresh);
 
 });
