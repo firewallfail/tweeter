@@ -33,10 +33,10 @@ $(document).ready(function() {
   };
 
   //Takes in an array of tweets passing an individual tweet to createTweetElement
-  //then appends it to #tweets-container
+  //then prepend it to #tweets-container
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
