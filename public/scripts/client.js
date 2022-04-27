@@ -68,7 +68,7 @@ $(document).ready(function() {
 
   renderTweets(data);
 
-  const tweetRefresh = function(event) {
+  const sendTweet = function(event) {
     event.preventDefault();
     const formData = $(this).serialize();
     $.ajax({
@@ -78,6 +78,6 @@ $(document).ready(function() {
     })
   };
 
-  $('form').submit(tweetRefresh);
+  $('form').submit(sendTweet);
 
 });
