@@ -19,8 +19,7 @@ $(document).ready(function() {
   };
 
   const createTweetElement = function(db) {
-    return $(
-      `<article class="tweet">
+    return $(`<article class="tweet">
     <header>
       <div>
         <img src="${db.user.avatars}" alt="Profile picture">
@@ -28,7 +27,6 @@ $(document).ready(function() {
       </div>
       <div class="username">${db.user.handle}</div>
     </header>
-
     <p>
       ${db.content.text}
     </p>
@@ -40,8 +38,7 @@ $(document).ready(function() {
         <i id="heart" class="fa-solid fa-heart"></i>
       </div>
     </footer>
-  </article>`
-    );
+  </article>`);
   };
 
   // const $tweet = $(`<article class="tweet">Hello world</article>`);
