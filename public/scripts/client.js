@@ -64,11 +64,16 @@ $(document).ready(function() {
   //reload tweets from db
   const sendTweet = function(event) {
     event.preventDefault();
+    $('#submit-error').slideUp(500);
     const counter = Number($(this).find('.counter').text());
     if (counter >= 140) {
-      return alert('Tweet cannot be empty');
+      $('#submit-error').text('Tweet cannot be empty');
+      $('#submit-error').slideDown(500);
+      return;
     } else if (counter < 0) {
-      return alert('Tweet is too long');
+      $('#submit-error').text('Tweet is too long');
+      $('#submit-error').slideDown(500);
+      return;
     }
     const formData = $(this).serialize();
     $.ajax({
