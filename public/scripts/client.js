@@ -40,6 +40,20 @@ $(document).ready(function() {
     }
   };
 
+  //Display all tweets in the db and reset input field
+  const loadTweets = function() {
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function(res) {
+        $('#tweet-text').val('');
+        $('.counter').text('140');
+        renderTweets(res);
+      });
+  };
+  loadTweets();
+
+  //Send new tweet to db if tweet is a valid length
+  //alert user if not valid length
+  //reload tweets from db
   const sendTweet = function(event) {
     event.preventDefault();
     const counter = Number($(this).find('.counter').text());
@@ -54,17 +68,9 @@ $(document).ready(function() {
       data: formData,
       url: '/tweets',
     })
-  };
-
-  $('form').submit(sendTweet);
-
-  const loadTweets = function() {
-    $.ajax('/tweets', { method: 'GET' })
-      .then(function(res) {
-        renderTweets(res);
+      .then(() => {
+        loadTweets();
       });
-  }
-
-  loadTweets();
-
+  };
+  $('form').submit(sendTweet);
 });
