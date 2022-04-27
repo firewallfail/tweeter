@@ -5,6 +5,13 @@
  */
 
 $(document).ready(function() {
+  //remove html from user post to prevent cross-site scripting
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
 
   //Takes in one tweet object returning HTML with values inserted
   const createTweetElement = function(tweet) {
@@ -12,16 +19,16 @@ $(document).ready(function() {
     <article class="tweet">
     <header>
       <div>
-        <img src="${tweet.user.avatars}" alt="Profile picture">
-        <div>${tweet.user.name}</div>
+        <img src="${escape(tweet.user.avatars)}" alt="Profile picture">
+        <div>${escape(tweet.user.name)}</div>
       </div>
-      <div class="username">${tweet.user.handle}</div>
+      <div class="username">${escape(tweet.user.handle)}</div>
     </header>
     <p>
-      ${tweet.content.text}
+      ${escape(tweet.content.text)}
     </p>
     <footer>
-      <div>${timeago.format(tweet.created_at)}</div>
+      <div>${timeago.format(escape(tweet.created_at))}</div>
       <div>
         <i id="flag" class="fa-solid fa-flag fa-xs"></i>
         <i id="retweet" class="fa-solid fa-share fa-xs"></i>
