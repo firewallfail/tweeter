@@ -42,6 +42,12 @@ $(document).ready(function() {
 
   const sendTweet = function(event) {
     event.preventDefault();
+    const counter = Number($(this).find('.counter').text());
+    if (counter >= 140) {
+      return alert('Tweet cannot be empty');
+    } else if (counter < 0) {
+      return alert('Tweet is too long');
+    }
     const formData = $(this).serialize();
     $.ajax({
       method: 'POST',
