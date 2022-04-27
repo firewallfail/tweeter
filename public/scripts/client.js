@@ -6,32 +6,46 @@
 
 $(document).ready(function() {
   //test data
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd"
+      },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ]
 
-  const createTweetElement = function(db) {
+  const createTweetElement = function(tweet) {
     return $(`<article class="tweet">
     <header>
       <div>
-        <img src="${db.user.avatars}" alt="Profile picture">
-        <div>${db.user.name}</div>
+        <img src="${tweet.user.avatars}" alt="Profile picture">
+        <div>${tweet.user.name}</div>
       </div>
-      <div class="username">${db.user.handle}</div>
+      <div class="username">${tweet.user.handle}</div>
     </header>
     <p>
-      ${db.content.text}
+      ${tweet.content.text}
     </p>
     <footer>
-      <div>${db.created_at}</div>
+      <div>${tweet.created_at}</div>
       <div>
         <i id="flag" class="fa-solid fa-flag"></i>
         <i id="retweet" class="fa-solid fa-share"></i>
@@ -41,9 +55,10 @@ $(document).ready(function() {
   </article>`);
   };
 
-  // const $tweet = $(`<article class="tweet">Hello world</article>`);
+  const renderTweets = function(tweets) {
+    return null;
+  };
 
-  const $tweet = createTweetElement(tweetData);
-
+  // const $tweet = createTweetElement(tweetData);
   $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 });
