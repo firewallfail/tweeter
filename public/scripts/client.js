@@ -40,10 +40,11 @@ $(document).ready(function() {
     }
   };
 
-  //Display all tweets in the db and reset input field
+  //Display all tweets in the db after emptying the container then reset input field
   const loadTweets = function() {
     $.ajax('/tweets', { method: 'GET' })
       .then(function(res) {
+        $('#tweets-container').empty();
         $('#tweet-text').val('');
         $('.counter').text('140');
         renderTweets(res);
