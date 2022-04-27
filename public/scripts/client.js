@@ -34,7 +34,8 @@ $(document).ready(function() {
 
   //Takes in one tweet object returning HTML with values inserted
   const createTweetElement = function(tweet) {
-    return $(`<article class="tweet">
+    return $(`
+    <article class="tweet">
     <header>
       <div>
         <img src="${tweet.user.avatars}" alt="Profile picture">
@@ -53,7 +54,8 @@ $(document).ready(function() {
         <i id="heart" class="fa-solid fa-heart"></i>
       </div>
     </footer>
-  </article>`);
+  </article>
+  `);
   };
 
   //Takes in an array of tweets passing an individual tweet to createTweetElement
