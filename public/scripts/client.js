@@ -32,6 +32,7 @@ $(document).ready(function() {
     }
   ]
 
+  //Takes in one tweet object returning HTML with values inserted
   const createTweetElement = function(tweet) {
     return $(`<article class="tweet">
     <header>
@@ -55,10 +56,14 @@ $(document).ready(function() {
   </article>`);
   };
 
+  //Takes in an array of tweets passing an individual tweet to createTweetElement
+  //then appends it to #tweets-container
   const renderTweets = function(tweets) {
-    return null;
+    for (const tweet of tweets) {
+      $('#tweets-container').append(createTweetElement(tweet));
+    }
   };
 
-  // const $tweet = createTweetElement(tweetData);
-  $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  renderTweets(data);
+
 });
