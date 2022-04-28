@@ -54,7 +54,8 @@ $(document).ready(function() {
         $('#tweet-text').val('');
         $('.counter').text('140');
         renderTweets(res);
-      });
+      })
+      .catch((err) => console.log(err));
   };
   loadTweets();
 
@@ -82,7 +83,8 @@ $(document).ready(function() {
     })
       .then(() => {
         loadTweets();
-      });
+      })
+      .catch((err) => console.log(err));
   };
   $('form').submit(sendTweet);
 
