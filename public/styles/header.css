@@ -9,3 +9,19 @@
   background-color: black;
   background-image: url(../images/3px-tile.png);
 }
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  .container {
+    margin-top: 140px;
+    width: 50vw;
+  }
+
+  .profile {
+    width: 50vw;
+    margin: 140px 10rem;
+  }
+}
