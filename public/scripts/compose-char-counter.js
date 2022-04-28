@@ -3,7 +3,7 @@ $(document).ready(function() {
   const maxTweetLength = 140;
   $('#tweet-text').on('input', function() {
     let remainingCharacters = maxTweetLength - $(this).val().length;
-    let output = $(this).next().children('output')
+    let output = $(this).next().children('output');
     if (remainingCharacters < 0) {
       output.addClass('counter-red');
     }
@@ -11,5 +11,5 @@ $(document).ready(function() {
       output.removeClass('counter-red');
     }
     output.text(remainingCharacters);
-  })
+  });
 });

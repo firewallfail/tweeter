@@ -1,9 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+//All client functionality
 $(document).ready(function() {
   //remove html from user post to prevent cross-site scripting
   const escape = function(str) {
@@ -88,8 +83,9 @@ $(document).ready(function() {
   };
   $('form').submit(sendTweet);
 
+  //Toggle the tweet box on click
   $('.tweet-toggle').on('click', function() {
     $(document).find('.tweet-section').slideToggle(500);
     $('#tweet-text').select();
-  })
+  });
 });
