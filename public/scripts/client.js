@@ -12,7 +12,6 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-
   //Takes in one tweet object returning HTML with values inserted
   const createTweetElement = function(tweet) {
     return $(`
@@ -86,4 +85,9 @@ $(document).ready(function() {
       });
   };
   $('form').submit(sendTweet);
+
+  $('.tweet-toggle').on('click', function() {
+    $(document).find('.tweet-section').slideToggle(500);
+    $('#tweet-text').select();
+  })
 });
