@@ -125,3 +125,7 @@ article.tweet footer div {
   margin: 0.5em 0;
   display: none;
 }
+
+.tweet-toggle:hover {
+  cursor: pointer;
+}
